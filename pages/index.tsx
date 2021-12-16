@@ -1,7 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import NextLink from "next/link";
+import NextImage from "next/image";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+
+import profile from "../public/assets/profile.jpg";
 
 const Home: NextPage = () => {
   return (
@@ -12,9 +15,9 @@ const Home: NextPage = () => {
       <main>
         <section className="flex items-center justify-center gap-8 mb-32">
           <div>
-            <h1 className="text-3xl font-light mb-4">Hello there. I'm Lucas!</h1>
+            <h1 className="text-3xl font-light mb-4">Hello there. I&apos;m Lucas!</h1>
             <p className="text-gray-600 text-xl leading-loose mb-8">
-            I’m a father, a husband, and a software engineer. My mission is to write software that improves people's lives. I have experience building and designing for the web, as well as writing automated tests.
+            I&apos;m a father, a husband, and a software engineer. My mission is to write software that improves people&apos;s lives. I have experience building and designing for the web, as well as writing automated tests.
             </p>
             <ul className="flex justify-start gap-4">
               <li>
@@ -40,7 +43,7 @@ const Home: NextPage = () => {
               </li>
             </ul>
           </div>
-          <img src="/assets/profile.jpg" alt="profile" className="hidden md:block rounded-full w-1/4 "/>
+          <NextImage src={profile} alt="profile" className="hidden md:block rounded-full w-1/4 "/>
         </section>
 
         <section className="mb-28">
