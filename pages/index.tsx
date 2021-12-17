@@ -1,5 +1,5 @@
 import Head from "next/head";
-import NextLink from "next/link";
+import Link from "next/link";
 import NextImage from "next/image";
 import type { GetStaticProps } from "next";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
@@ -49,25 +49,25 @@ const Home = ({ projects, posts }: HomeProps) => {
             </p>
             <ul className="flex justify-start gap-4">
               <li>
-                <NextLink href="#">
+                <Link href="#">
                   <a target="_blank" className="nav-icon">
                     <FiLinkedin />
                   </a>
-                </NextLink>
+                </Link>
               </li>
               <li>
-                <NextLink href="#">
+                <Link href="#">
                   <a target="_blank" className="nav-icon">
                     <FiGithub />
                   </a>
-                </NextLink>
+                </Link>
               </li>
               <li>
-                <NextLink href="#">
+                <Link href="#">
                   <a target="_blank" className="nav-icon">
                     <FiTwitter />
                   </a>
-                </NextLink>
+                </Link>
               </li>
             </ul>
           </div>
@@ -81,12 +81,12 @@ const Home = ({ projects, posts }: HomeProps) => {
         <section className="mb-28">
           <h1 className="text-3xl font-light mb-4">
             I build{" "}
-            <NextLink href="/work">
+            <Link href="/work">
               <a className="heading-link"
               >
                 projects
               </a>
-            </NextLink>
+            </Link>
           </h1>
           <p className="text-gray-600 text-lg mb-8">
             I have put my skills to practice by building some interesting things for professional, educational, and personal purposes.
@@ -100,12 +100,12 @@ const Home = ({ projects, posts }: HomeProps) => {
         <section className="mb-28">
         <h1 className="text-3xl font-light mb-4">
             I write{" "}
-            <NextLink href="/blog">
+            <Link href="/blog">
               <a className="heading-link"
               >
                 articles
               </a>
-            </NextLink>
+            </Link>
           </h1>
           <p className="text-gray-600 text-lg mb-8">
             Occasionally I feel compelled to write about things that I am learning or that interests me. I have plans to write new articles more frequently to showcase some of the things I have been working on.

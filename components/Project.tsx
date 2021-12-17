@@ -1,4 +1,4 @@
-import NextLink from "next/link";
+import Link from "next/link";
 import NextImage from "next/image";
 
 type Project = {
@@ -30,9 +30,9 @@ export const Project = ({ project }: ProjectProps) => {
         />
       </div>}
       <div className="w-full md:w-3/4">
-        <NextLink href={!!project.github ? project.github : !!project.url ? project.url : '#'}>
+        <Link href={!!project.github ? project.github : !!project.url ? project.url : '#'}>
           <a target="_blank" className="article-title">{project.title}</a>
-        </NextLink>
+        </Link>
         <span className="block text-gray-500 mb-2">Built with: {project.technologies.map((tech) => tech + " ")}</span>
         <p className="line-clamp-3">{project.brief}</p>
         <span className="block text-gray-500 mt-2">{project.startDate} - {project.endDate}</span>

@@ -32,6 +32,10 @@ footer a:hover {
   @apply block font-bold text-xl transition-colors text-gray-800 hover:text-sky-600 mb-1 line-clamp-1;
 }
 
+.btn-link {
+  @apply block my-32 mx-auto w-1/4 text-center bg-sky-600 py-2 rounded-full font-bold text-white shadow-md transition hover:brightness-90;
+}
+
 /* Utilities */
 .line-clamp-3 {
   display: -webkit-box;

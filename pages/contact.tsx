@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import NextLink from "next/link";
+import Link from "next/link";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 const Contact: NextPage = () => {

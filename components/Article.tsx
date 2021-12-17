@@ -1,4 +1,4 @@
-import NextLink from "next/link";
+import Link from "next/link";
 import NextImage from "next/image";
 
 type Post = {
@@ -27,9 +27,9 @@ export const Article = ({ post }: ArticleProps) => {
         />
       </div>
       <div className="w-full md:w-3/4">
-        <NextLink href={process.env.NEXT_PUBLIC_BLOG_URL + `/${post.slug}`}>
+        <Link href={process.env.NEXT_PUBLIC_BLOG_URL + `/${post.slug}`}>
           <a target="_blank" className="article-title">{post.title}</a>
-        </NextLink>
+        </Link>
         <span className="block text-gray-500 mb-2">
           {new Date(post.dateAdded).toLocaleDateString('en-US', {
             day: '2-digit',
