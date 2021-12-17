@@ -8,17 +8,17 @@ export const Footer = () => {
       <p className="text-center text-xl text-gray-800 mt-8">@lucasamonrc</p>
       <nav className="flex justify-center gap-4 mt-4 mb-16">
         <NextLink href="#">
-          <a target="_blank" className="block text-4xl text-sky-600 transition-transform hover:-translate-y-2">
+          <a target="_blank" className="nav-icon">
             <FiLinkedin />
           </a>
         </NextLink>
         <NextLink href="#">
-          <a target="_blank" className="block text-4xl text-sky-600 transition-transform hover:-translate-y-2">
+          <a target="_blank" className="nav-icon">
             <FiGithub />
           </a>
         </NextLink>
         <NextLink href="#">
-          <a target="_blank" className="block text-4xl text-sky-600 transition-transform hover:-translate-y-2">
+          <a target="_blank" className="nav-icon">
             <FiTwitter />
           </a>
         </NextLink>

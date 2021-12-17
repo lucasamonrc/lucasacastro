@@ -10,7 +10,7 @@ const Contact: NextPage = () => {
         <title>Blog | Lucas A Castro</title>
       </Head>
       <main>
-        <h1 className="text-5xl font-bold mb-4 text-gray-800">Blog</h1>
+        <h1 className="page-title">Blog</h1>
         <hr />
       </main>
     </>

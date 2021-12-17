@@ -10,7 +10,7 @@ const Work: NextPage = () => {
         <title>Work | Lucas A Castro</title>
       </Head>
       <main>
-        <h1 className="text-5xl font-bold mb-4 text-gray-800">Work</h1>
+        <h1 className="page-title">Work</h1>
         <hr />
       </main>
     </>

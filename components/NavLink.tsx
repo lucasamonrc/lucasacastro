@@ -12,18 +12,7 @@ export const NavLink = ({ href, name }: NavLinkProps) => {
   
   return (
     <NextLink href={href}>
-      <a className={`
-          uppercase
-          after:content-['']
-          after:border-b-4
-          after:border-sky-600
-          after:block
-          ${isActive 
-            ? 'after:scale-x-1' 
-            : `after:scale-x-0 after:transition-all after:transform after:origin-left after:hover:scale-x-100`
-          }`
-        }
-      >
+      <a className={`nav-link ${isActive ? 'after:scale-x-100' : `nav-link-inactive`}`}>
         {name}
       </a>
     </NextLink>

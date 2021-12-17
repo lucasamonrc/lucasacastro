@@ -2,13 +2,13 @@ import Head from "next/head";
 import NextLink from "next/link";
 import NextImage from "next/image";
 import { Client } from "@notionhq/client";
-import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 import type { GetStaticProps } from "next";
+import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 import { Article } from "../components/Article";
+import { Project } from "../components/Project";
 import profile from "../public/assets/profile.jpg";
 import { GET_USER_ARTICLES, gql } from "../services/hashnode";
-import { Project } from "../components/Project";
 
 type Project = {
   thumbnail: string | null,
@@ -50,21 +50,21 @@ const Home = ({ projects, posts }: HomeProps) => {
             <ul className="flex justify-start gap-4">
               <li>
                 <NextLink href="#">
-                  <a target="_blank" className="block text-4xl text-sky-600 transition-transform hover:-translate-y-2">
+                  <a target="_blank" className="nav-icon">
                     <FiLinkedin />
                   </a>
                 </NextLink>
               </li>
               <li>
                 <NextLink href="#">
-                  <a target="_blank" className="block text-4xl text-sky-600 transition-transform hover:-translate-y-2">
+                  <a target="_blank" className="nav-icon">
                     <FiGithub />
                   </a>
                 </NextLink>
               </li>
               <li>
                 <NextLink href="#">
-                  <a target="_blank" className="block text-4xl text-sky-600 transition-transform hover:-translate-y-2">
+                  <a target="_blank" className="nav-icon">
                     <FiTwitter />
                   </a>
                 </NextLink>
@@ -82,7 +82,7 @@ const Home = ({ projects, posts }: HomeProps) => {
           <h1 className="text-3xl font-light mb-4">
             I build{" "}
             <NextLink href="/work">
-              <a className="text-sky-600 underline underline-offset-8 font-bold px-1 pb-1 transition hover:bg-sky-600 hover:text-white"
+              <a className="heading-link"
               >
                 projects
               </a>
@@ -101,7 +101,7 @@ const Home = ({ projects, posts }: HomeProps) => {
         <h1 className="text-3xl font-light mb-4">
             I write{" "}
             <NextLink href="/blog">
-              <a className="text-sky-600 underline underline-offset-8 font-bold px-1 pb-1 transition hover:bg-sky-600 hover:text-white"
+              <a className="heading-link"
               >
                 articles
               </a>

@@ -31,7 +31,7 @@ export const Project = ({ project }: ProjectProps) => {
       </div>}
       <div className="w-full md:w-3/4">
         <NextLink href={!!project.github ? project.github : !!project.url ? project.url : '#'}>
-          <a target="_blank" className="block font-bold text-xl transition-colors text-gray-800 hover:text-sky-600 line-clamp-1">{project.title}</a>
+          <a target="_blank" className="article-title">{project.title}</a>
         </NextLink>
         <span className="block text-gray-500 mb-2">Built with: {project.technologies.map((tech) => tech + " ")}</span>
         <p className="line-clamp-3">{project.brief}</p>
