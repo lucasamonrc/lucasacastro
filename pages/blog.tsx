@@ -32,7 +32,7 @@ export default function Blog({ posts }: BlogProps) {
         ))}
 
         <Link href={process.env.NEXT_PUBLIC_BLOG_URL ?? '#'}>
-          <a target="_blank" className="btn-link">See all posts</a>
+          <a target="_blank" className="btn-link mt-16">See all posts</a>
         </Link>
       </main>
     </>

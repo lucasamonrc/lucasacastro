@@ -49,21 +49,21 @@ export default function Home({ projects, posts }: HomeProps) {
             </p>
             <ul className="flex justify-start gap-4">
               <li>
-                <Link href="#">
+                <Link href="https://www.linkedin.com/in/lucasamonrc">
                   <a target="_blank" className="nav-icon">
                     <FiLinkedin />
                   </a>
                 </Link>
               </li>
               <li>
-                <Link href="#">
+                <Link href="https://www.github.com/lucasamonrc">
                   <a target="_blank" className="nav-icon">
                     <FiGithub />
                   </a>
                 </Link>
               </li>
               <li>
-                <Link href="#">
+                <Link href="https://www.twitter.com/lucasamonrc">
                   <a target="_blank" className="nav-icon">
                     <FiTwitter />
                   </a>
