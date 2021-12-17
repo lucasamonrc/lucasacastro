@@ -8,6 +8,7 @@ import type { GetStaticProps } from "next";
 import { Article } from "../components/Article";
 import profile from "../public/assets/profile.jpg";
 import { GET_USER_ARTICLES, gql } from "../services/hashnode";
+import { Project } from "../components/Project";
 
 type Project = {
   thumbnail: string | null,
@@ -16,6 +17,8 @@ type Project = {
   technologies: string[],
   startDate: string,
   endDate: string,
+  url: string | null,
+  github: string | null,
 };
 
 type Post = {
@@ -68,7 +71,9 @@ const Home = ({ projects, posts }: HomeProps) => {
               </li>
             </ul>
           </div>
-          <NextImage src={profile} alt="profile" className="hidden md:block rounded-full w-1/4 "/>
+          <div className="hidden md:block">
+            <NextImage src={profile} alt="profile" className="rounded-full w-1/4 "/>
+          </div>
         </section>
 
         <hr className="mb-32" />
@@ -88,16 +93,7 @@ const Home = ({ projects, posts }: HomeProps) => {
           </p>
 
           {projects.map((project, index) => (
-            <article key={index}>
-              <strong>{project.title}</strong>
-              <p>{project.brief}</p>
-              <ul>
-                {project.technologies.map((tech, i) => (
-                  <li key={i}>{tech}</li>
-                ))}
-              </ul>
-              <span>{project.startDate} - {project.endDate}</span>
-            </article>
+            <Project key={index} project={project} />
           ))}
         </section>
 
