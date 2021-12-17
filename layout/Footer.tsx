@@ -7,17 +7,17 @@ export function Footer() {
       <hr />
       <p className="text-center text-xl text-gray-800 mt-8">@lucasamonrc</p>
       <nav className="flex justify-center gap-4 mt-4 mb-16">
-        <Link href="#">
+        <Link href="https://www.linkedin.com/in/lucasamonrc">
           <a target="_blank" className="nav-icon">
             <FiLinkedin />
           </a>
         </Link>
-        <Link href="#">
+        <Link href="https://www.github.com/lucasamonrc">
           <a target="_blank" className="nav-icon">
             <FiGithub />
           </a>
         </Link>
-        <Link href="#">
+        <Link href="https://www.twitter.com/lucasamonrc">
           <a target="_blank" className="nav-icon">
             <FiTwitter />
           </a>

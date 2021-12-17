@@ -21,10 +21,32 @@ export default function Contact() {
     event.preventDefault();
     setLoading(true);
 
-    await fetch('/api/requests', {
-      method: 'POST',
-      body: JSON.stringify(contactRequest),
-    });
+    const entry = {
+      rooster: {
+        name: contactRequest.name,
+        email: contactRequest.email,
+        message: contactRequest.body,
+        createdAt: new Date().toISOString(),
+      }
+    }
+
+    try {
+      await fetch(process.env.NEXT_PUBLIC_SHEET_URL as string, {
+        method: 'POST',
+        headers: {
+          "Authorization": `Bearer ${process.env.NEXT_PUBLIC_SHEET_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(entry),
+      });
+
+    } catch (error) {
+      alert("An error occurred. Check the page logs for more information");
+      console.error(error);
+      
+      setLoading(false);
+      return;
+    }
 
     setLoading(false);
     setSubmitted(true);
