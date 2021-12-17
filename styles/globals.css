@@ -36,6 +36,14 @@ footer a:hover {
   @apply block mx-auto w-1/4 text-center bg-sky-600 py-2 rounded-full font-bold text-white shadow-md transition hover:brightness-90;
 }
 
+.btn {
+  @apply block w-1/4 bg-sky-600 py-2 rounded-full font-bold text-white shadow-md transition hover:brightness-90;
+}
+
+.btn:disabled {
+  @apply grayscale hover:brightness-100
+}
+
 /* Utilities */
 .line-clamp-3 {
   display: -webkit-box;
