@@ -1,12 +1,12 @@
 import Head from "next/head";
 import NextLink from "next/link";
 import NextImage from "next/image";
-import { Client } from "@notionhq/client";
 import type { GetStaticProps } from "next";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 import { Article } from "../components/Article";
 import { Project } from "../components/Project";
+import { getProjects } from "../services/notion";
 import profile from "../public/assets/profile.jpg";
 import { GET_USER_ARTICLES, gql } from "../services/hashnode";
 
@@ -123,29 +123,10 @@ const Home = ({ projects, posts }: HomeProps) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const notion = new Client({ auth: process.env.NOTION_KEY });
-  const database_id = process.env.NOTION_DB_ID as string;
+  const projects = await getProjects({ pageSize: 3, sorts: [{ property: 'date', direction: 'descending' }] });
 
-  const response = await notion.databases.query({ 
-    database_id,
-    page_size: 3, 
-    sorts: [ { property: 'date', direction: 'descending' }] 
-  }) as any;
-
-  const projects = response.results.map(({ properties }: any) => {
-    return {
-      thumbnail: properties.thumbnail.url,
-      url: properties.url.url,
-      github: properties.github.url,
-      title: properties.title.title[0].plain_text,
-      brief: properties.brief.rich_text[0].plain_text,
-      technologies: properties.technologies.multi_select.map(({ name }: any) => name),
-      startDate: properties.startDate.rich_text[0].plain_text,
-      endDate: properties.endDate.rich_text[0].plain_text,
-    }
-  });
-
-  const { data: { user: { publication: { posts } } } } = await gql(GET_USER_ARTICLES, { page: 0 });
+  const { data } = await gql(GET_USER_ARTICLES, { page: 0 });
+  const posts = data.user.publication.posts;
 
   return {
     props: {
