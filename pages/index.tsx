@@ -34,7 +34,7 @@ interface HomeProps {
   posts: Post[];
 }
 
-const Home = ({ projects, posts }: HomeProps) => {
+export default function Home({ projects, posts }: HomeProps) {
   return (
     <>
       <Head>
@@ -119,8 +119,6 @@ const Home = ({ projects, posts }: HomeProps) => {
     </>
   );
 }
-
-export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const projects = await getProjects({ pageSize: 3, sorts: [{ property: 'date', direction: 'descending' }] });

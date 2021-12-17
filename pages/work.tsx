@@ -1,9 +1,6 @@
-import type { NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
-import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
-const Work: NextPage = () => {
+export default function Work() {
   return (
     <>
       <Head>
@@ -16,5 +13,3 @@ const Work: NextPage = () => {
     </>
   );
 }
-
-export default Work;

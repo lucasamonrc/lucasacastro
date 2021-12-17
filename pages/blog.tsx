@@ -17,7 +17,7 @@ interface BlogProps {
   posts: Post[];
 }
 
-function Blog({ posts }: BlogProps) {
+export default function Blog({ posts }: BlogProps) {
   return (
     <>
       <Head>
@@ -38,8 +38,6 @@ function Blog({ posts }: BlogProps) {
     </>
   );
 }
-
-export default Blog;
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await gql(GET_USER_ARTICLES, { page: 0 });
