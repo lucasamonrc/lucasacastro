@@ -13,7 +13,7 @@ interface ArticleProps {
   post: Post;
 }
 
-export const Article = ({ post }: ArticleProps) => {
+export function Article({ post }: ArticleProps) {
   return (
     <article className="flex gap-4 justify-between items-start mb-8">
       <div className="hidden md:block relative w-[208px] h-[132px] shadow-sm">

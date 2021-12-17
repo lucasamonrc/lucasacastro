@@ -6,7 +6,7 @@ interface NavLinkProps {
   name: string;
 }
 
-export const NavLink = ({ href, name }: NavLinkProps) => {
+export function NavLink({ href, name }: NavLinkProps) {
   const { asPath } = useRouter()
   const isActive = asPath === href;
   

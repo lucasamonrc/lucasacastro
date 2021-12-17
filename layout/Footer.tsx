@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
-export const Footer = () => {
+export function Footer() {
   return (
     <footer className="mt-32">
       <hr />

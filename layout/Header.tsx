@@ -1,7 +1,7 @@
 import { Logo } from "../components/Logo";
 import { NavLink } from "../components/NavLink";
 
-export const Header = () => {
+export function Header() {
   return (
     <header className="flex flex-col justify-center items-center py-16">
       <Logo />

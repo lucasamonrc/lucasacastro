@@ -16,7 +16,7 @@ interface ProjectProps {
   project: Project;
 }
 
-export const Project = ({ project }: ProjectProps) => {
+export function Project({ project }: ProjectProps) {
   return (
     <article className="flex gap-4 justify-between items-start mb-8">
       {!!project.thumbnail && <div className="hidden md:block relative w-[208px] h-[132px] shadow-sm">
