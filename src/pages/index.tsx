@@ -7,7 +7,7 @@ import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { Article } from "../components/Article";
 import { Project } from "../components/Project";
 import { getProjects } from "../services/notion";
-import profile from "../public/assets/profile.jpg";
+import profile from "../../public/assets/profile.jpg";
 import { GET_USER_ARTICLES, gql } from "../services/hashnode";
 
 type Project = {
