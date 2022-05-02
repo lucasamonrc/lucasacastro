@@ -30,7 +30,7 @@ export default function Contact() {
     }
 
     try {
-      await fetch(process.env.EMAILER_API_URL as string, {
+      await fetch(process.env.NEXT_PUBLIC_EMAILER_API_URL as string, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
