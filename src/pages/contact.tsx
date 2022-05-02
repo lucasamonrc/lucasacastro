@@ -26,7 +26,7 @@ export default function Contact() {
       from: "lucas.castro.aws@gmail.com",
       subject: "noreply@lucasacastro.dev - New Contact Form Request",
       textBody: `Sender: ${contactRequest.email} | Date: ${new Date().toISOString()}\nMessage: ${contactRequest.body}`,
-      htmlBody: `Sender: ${contactRequest.email} | Date: ${new Date().toISOString()}\nMessage: ${contactRequest.body}`,
+      htmlBody: `Sender: ${contactRequest.email} | Date: ${new Date().toISOString()}<br>Message: ${contactRequest.body}`,
     }
 
     try {
