@@ -9,7 +9,7 @@ The version 3.0 of my personal website. It integrates with different services to
 - [Tailwind](https://tailwindcss.com/)
 - [Hashnode API](https://api.hashnode.com/)
 - [Notion API](https://developers.notion.com/)
-- [Sheety](https://sheety.co/)
+- [Amazon Simple Email Service](https://aws.amazon.com/ses/)
 
 ## 🛠 Setup
 
