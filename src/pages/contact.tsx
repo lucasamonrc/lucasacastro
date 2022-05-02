@@ -36,6 +36,7 @@ export default function Contact() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(entry),
+        mode: 'no-cors',
       });
 
     } catch (error) {
