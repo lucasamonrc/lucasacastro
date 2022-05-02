@@ -22,19 +22,17 @@ export default function Contact() {
     setLoading(true);
 
     const entry = {
-      rooster: {
-        name: contactRequest.name,
-        email: contactRequest.email,
-        message: contactRequest.body,
-        createdAt: new Date().toISOString(),
-      }
+      to: "lucasamonrc@gmail.com",
+      from: "lucas.castro.aws@gmail.com",
+      subject: "noreply@lucasacastro.dev - New Contact Form Request",
+      textBody: `Sender: ${contactRequest.email} | Date: ${new Date().toISOString()}\nMessage: ${contactRequest.body}`,
+      htmlBody: `Sender: ${contactRequest.email} | Date: ${new Date().toISOString()}\nMessage: ${contactRequest.body}`,
     }
 
     try {
-      await fetch(process.env.NEXT_PUBLIC_SHEET_URL as string, {
+      await fetch(process.env.EMAILER_API_URL as string, {
         method: 'POST',
         headers: {
-          "Authorization": `Bearer ${process.env.NEXT_PUBLIC_SHEET_TOKEN}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(entry),
@@ -43,7 +41,7 @@ export default function Contact() {
     } catch (error) {
       alert("An error occurred. Check the page logs for more information");
       console.error(error);
-      
+
       setLoading(false);
       return;
     }
@@ -63,47 +61,47 @@ export default function Contact() {
         <hr />
 
         {
-          !submitted 
-          ? (
-            <>
-              <p className="mt-8 text-xl leading-relaxed">
-                Interested in working with me? Would like to leave a suggestion for new content? Or do you have a more general question? Please, just let me know!
-              </p>
-              <form onSubmit={handleSubmit} className="w-full mt-8">
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Name"
-                  onChange={handleChange}
-                  className="block w-full bg-gray-200 p-2 text-xl rounded outline-sky-600 mb-4 shadow-inner"
-                  required
-                />
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  onChange={handleChange}
-                  className="block w-full bg-gray-200 p-2 text-xl rounded outline-sky-600 mb-4 shadow-inner"
-                  required
-                />
-                <textarea
-                  name="body"
-                  placeholder="Include any relevant information regarding your request"
-                  onChange={handleChange}
-                  className="block w-full bg-gray-200 p-2 text-xl rounded outline-sky-600 mb-4 shadow-inner min-h-[128px] resize-y"
-                  required
-                />
-                <button type="submit" className="btn mt-12" disabled={loading}>{loading ? 'Submitting...' : 'Submit'}</button>
-              </form>
-            </>
-          )
-          : (
-            <section className="mt-32 text-center text-xl">
-              <p className="font-bold text-green-700 mb-4">Success!</p>
-              <p className="mb-4">Your request was submitted successfully. I will reach out back to you soon!</p>
-              <p>In the meantime feel free to connect with in any of the channels below.</p>
-            </section>
-          )
+          !submitted
+            ? (
+              <>
+                <p className="mt-8 text-xl leading-relaxed">
+                  Interested in working with me? Would like to leave a suggestion for new content? Or do you have a more general question? Please, just let me know!
+                </p>
+                <form onSubmit={handleSubmit} className="w-full mt-8">
+                  <input
+                    name="name"
+                    type="text"
+                    placeholder="Name"
+                    onChange={handleChange}
+                    className="block w-full bg-gray-200 p-2 text-xl rounded outline-sky-600 mb-4 shadow-inner"
+                    required
+                  />
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    onChange={handleChange}
+                    className="block w-full bg-gray-200 p-2 text-xl rounded outline-sky-600 mb-4 shadow-inner"
+                    required
+                  />
+                  <textarea
+                    name="body"
+                    placeholder="Include any relevant information regarding your request"
+                    onChange={handleChange}
+                    className="block w-full bg-gray-200 p-2 text-xl rounded outline-sky-600 mb-4 shadow-inner min-h-[128px] resize-y"
+                    required
+                  />
+                  <button type="submit" className="btn mt-12" disabled={loading}>{loading ? 'Submitting...' : 'Submit'}</button>
+                </form>
+              </>
+            )
+            : (
+              <section className="mt-32 text-center text-xl">
+                <p className="font-bold text-green-700 mb-4">Success!</p>
+                <p className="mb-4">Your request was submitted successfully. I will reach out back to you soon!</p>
+                <p>In the meantime feel free to connect with in any of the channels below.</p>
+              </section>
+            )
         }
       </main>
     </>
