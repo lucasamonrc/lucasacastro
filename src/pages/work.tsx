@@ -1,19 +1,19 @@
-import Head from "next/head";
-import Link from "next/link";
-import type { GetStaticProps } from "next";
+import Head from 'next/head';
+import Link from 'next/link';
+import type { GetStaticProps } from 'next';
 
-import { Project } from "../components/Project";
-import { getProjects } from "../services/notion";
+import { Project } from '../components/Project';
+import { getProjects } from '../services/notion';
 
 type Project = {
-  thumbnail: string | null,
-  title: string,
-  brief: string,
-  technologies: string[],
-  startDate: string,
-  endDate: string,
-  url: string | null,
-  github: string | null,
+  thumbnail: string | null;
+  title: string;
+  brief: string;
+  technologies: string[];
+  startDate: string;
+  endDate: string;
+  url: string | null;
+  github: string | null;
 };
 
 interface WorkProps {
@@ -24,18 +24,20 @@ export default function Work({ projects }: WorkProps) {
   return (
     <>
       <Head>
-        <title>Work | Lucas A Castro</title>
+        <title>Work | Lucas Castro</title>
       </Head>
       <main>
-        <h1 className="page-title">Work</h1>
-        <hr className="mb-16"/>
+        <h1 className='page-title'>Work</h1>
+        <hr className='mb-16' />
 
         {projects.map((project, index) => (
           <Project key={index} project={project} />
         ))}
 
-        <Link href="https://www.github.com/lucasamonrc">
-          <a target="_blank" className="btn-link mt-16">See all projects</a>
+        <Link href='https://www.github.com/lucasamonrc'>
+          <a target='_blank' className='btn-link mt-16'>
+            See all projects
+          </a>
         </Link>
       </main>
     </>
@@ -43,12 +45,15 @@ export default function Work({ projects }: WorkProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projects = await getProjects({ pageSize: 10, sorts: [{ property: 'date', direction: 'descending' }] });
+  const projects = await getProjects({
+    pageSize: 10,
+    sorts: [{ property: 'date', direction: 'descending' }],
+  });
 
   return {
     props: {
       projects,
     },
-    revalidate: 86400 // 24 hours
-  }
-}
+    revalidate: 86400, // 24 hours
+  };
+};
