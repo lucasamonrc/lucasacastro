@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link';
 
 interface NavLinkProps {
   href: string;
@@ -7,12 +6,9 @@ interface NavLinkProps {
 }
 
 export function NavLink({ href, name }: NavLinkProps) {
-  const { asPath } = useRouter()
-  const isActive = asPath === href;
-  
   return (
     <Link href={href}>
-      <a className={`nav-link ${isActive ? 'after:scale-x-100' : `nav-link-inactive`}`}>
+      <a className="font-sans uppercase after:content-[''] after:border-b-4 after:border-rose-800 after:block after:scale-x-0 after:transition-all after:transform after:origin-left after:hover:scale-x-100">
         {name}
       </a>
     </Link>

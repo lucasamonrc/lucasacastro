@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import type { GetStaticProps } from 'next';
 
 import { GET_USER_ARTICLES, gql } from '../services/hashnode';
@@ -24,18 +23,14 @@ export default function Blog({ posts }: BlogProps) {
         <title>Blog | Lucas Castro</title>
       </Head>
       <main>
-        <h1 className='page-title'>Blog</h1>
-        <hr className='mb-16' />
+        <h1 className="text-3xl font-display uppercase mb-4 text-neutral-600">
+          Archive
+        </h1>
+        <hr className="mb-8" />
 
         {posts.map((post) => (
           <Article key={post.slug} post={post} />
         ))}
-
-        <Link href={process.env.NEXT_PUBLIC_BLOG_URL ?? '#'}>
-          <a target='_blank' className='btn-link mt-16'>
-            See all posts
-          </a>
-        </Link>
       </main>
     </>
   );
