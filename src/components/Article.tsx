@@ -28,6 +28,11 @@ export function Article({ post }: ArticleProps) {
         </a>
       </Link>
       <p className="line-clamp-3 leading-relaxed text-lg">{post.brief}</p>
+      <Link href="/archive">
+        <a className="block mt-4 cursor-pointer font-semibold hover:text-rose-700 transition-colors">
+          Read more
+        </a>
+      </Link>
     </article>
   );
 }

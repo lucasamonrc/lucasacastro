@@ -35,11 +35,13 @@ export default function Home({ posts }: HomeProps) {
         {posts.map((post) => (
           <Article key={post.slug} post={post} />
         ))}
-        <Link href="/archive">
-          <a className="block text-center mt-16 mx-auto text-gray-500 cursor-pointer hover:text-rose-800 transition-colors">
-            Archive
-          </a>
-        </Link>
+        <div className="mt-16 mx-auto w-fit">
+          <Link href="/archive">
+            <a className="text-center text-gray-500 cursor-pointer hover:text-rose-800 transition-colors">
+              Archive
+            </a>
+          </Link>
+        </div>
       </main>
     </>
   );

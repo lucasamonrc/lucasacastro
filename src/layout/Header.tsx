@@ -1,5 +1,5 @@
+import Link from 'next/link';
 import Image from 'next/image';
-import { Logo } from '../components/Logo';
 import { NavLink } from '../components/NavLink';
 
 import links from '../assets/links';
@@ -17,7 +17,11 @@ export function Header() {
           height={100}
         />
         <header className="flex flex-col justify-center items-center">
-          <Logo />
+          <Link href="/">
+            <a className="block mb-2 text-5xl font-display font-bold text-neutral-700 uppercase leading-relaxed">
+              Lucas <span className="text-rose-700">Castro</span>
+            </a>
+          </Link>
           <nav className="flex gap-4 text-md">
             {links.map((link) => (
               <NavLink key={link.name} href={link.src} name={link.name} />
